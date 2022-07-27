@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit report</title>
+    <link rel='shortcut icon' href='icon.png' />
+</head>
+<body>
+<div id="container">
+</div>
+<script>
+    window.addEventListener("load", () => {
+        const script = document.createElement("script");
+        script.src = "reportApp.js" + "?" + new Date().getTime();
+        document.body.append(script);
+    });
+</script>
+<noscript>
+    Report application requires JavaScript to run
+</noscript>
+</body>
+</html>

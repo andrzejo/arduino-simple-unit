@@ -1,0 +1,158 @@
+@import "../color";
+
+$border: 1px solid #fff;
+$radius: 10px;
+
+.testcase {
+  border-radius: $radius;
+
+  .container {
+    background-color: $valueColor;
+    border-radius: $radius;
+  }
+
+  .table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $valueColor;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      border: $border;
+      border-bottom: none;
+      border-right: none;
+
+      &:last-child {
+        border: $border;
+        border-right: none;
+      }
+
+      > * {
+        border-right: $border;
+        width: 100%;
+        text-align: center;
+        padding: 3px;
+      }
+
+      &:not(.head) * {
+        font-weight: bold;
+      }
+
+      &.head {
+        background-color: $head1color;
+        border-top-right-radius: $radius;
+
+        > :last-child {
+          border-top-right-radius: $radius;
+        }
+      }
+    }
+  }
+
+  .testcase-header {
+    display: flex;
+    background-color: $head1color;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+
+    .table .row:last-child {
+      border-bottom: none;
+    }
+
+    .case-name {
+      min-width: 400px;
+      font-size: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: $border;
+      border-right: none;
+      border-bottom: none;
+      border-top-left-radius: $radius;
+      padding: 3px;
+    }
+
+  }
+
+  .tests {
+
+    .table {
+      border-radius: $radius;
+    }
+
+    .row.head {
+      background-color: $head2color;
+      border-radius: unset;
+
+      > :last-child {
+        border-radius: unset;
+      }
+    }
+
+    .row > :first-child {
+      min-width: 400px;
+    }
+
+    .row:last-child {
+      border-bottom-left-radius: $radius;
+      border-bottom-right-radius: $radius;
+
+      > :last-child {
+        border-bottom-right-radius: $radius;
+      }
+    }
+
+    .test-name {
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+
+  .failed-to-load {
+    color: $failedColor;
+  }
+
+  box-shadow: 0 0 20px #424242;
+
+  margin-bottom: 40px;
+
+  .details img {
+    margin: 5px;
+    border: 3px solid #505050;
+    border-radius: 5px;
+  }
+
+  .single-test {
+    .status {
+      font-weight: bold;
+    }
+
+    &.success {
+      .status {
+        color: $success1Color
+      }
+    }
+
+    &.failed {
+      .status {
+        color: $failedColor
+      }
+    }
+
+    &.skipped {
+      .status {
+        color: $statusColor
+      }
+    }
+  }
+
+  .single-test.success {
+    .status {
+
+    }
+  }
+}

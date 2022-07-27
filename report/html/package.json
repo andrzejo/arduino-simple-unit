@@ -1,0 +1,74 @@
+{
+  "name": "asu-html-report",
+  "version": "1.0.0",
+  "description": "Arduino Simple Unit HTML report",
+  "main": "webpack.mix.js",
+  "scripts": {
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --sourceMap",
+    "hot-https": "cross-env MIX_HMR_MAGIC=true NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --devtool=eval-cheap-module-source-map --progress --watch --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js --sourceMap",
+    "ci-test": "cross-env NODE_ENV=test jest --ci --reporters=default --reporters=jest-junit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-react": "^7.12.7",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/react-hooks": "^3.7.0",
+    "@types/jest": "^26.0.16",
+    "@types/lodash": "^4.14.165",
+    "@types/node": "^14.14.10",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "cross-env": "^5.2.1",
+    "jest": "^26.6.3",
+    "jest-junit": "^12.0.0",
+    "laravel-mix": "^5.0.9",
+    "react-test-renderer": "^17.0.1",
+    "ts-jest": "^26.4.4",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "fast-xml-parser": "^3.19.0",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hot-loader": "^4.13.0",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0"
+  },
+  "hmr": {
+    "address": "127.0.0.1",
+    "port": 8085
+  },
+  "jest": {
+    "testRegex": "src/.*.test.(js|ts|tsx)$",
+    "setupFilesAfterEnv": [
+      "./rtl.setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "<rootDir>/src/test/mocks/styleMock.js"
+    },
+    "transform": {
+      "^.+\\.(t|j)sx?$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "jest-junit": {
+    "outputDirectory": "../build/logs",
+    "outputName": "js-apps.xml"
+  }
+}

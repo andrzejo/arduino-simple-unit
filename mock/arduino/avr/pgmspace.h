@@ -1,0 +1,1 @@
+# define PSTR(s) (s)

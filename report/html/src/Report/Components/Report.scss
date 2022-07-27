@@ -1,0 +1,59 @@
+@import "../color";
+
+.report {
+  .test-label {
+    display: flex;
+    align-items: flex-end;
+    margin: 30px 0 10px;
+
+    .label {
+      font-weight: bold;
+      font-size: 22px;
+    }
+    .cases {
+      padding: 2px;
+    }
+  }
+
+  .report-props {
+    font-size: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    width: 500px;
+    box-shadow: 0 0 10px #424242;
+
+    .prop-title {
+      font-weight: bold;
+      font-size: 14px;
+      background-color: $head1color;
+      padding: 3px;
+      border-top-right-radius: 6px;
+      border-top-left-radius: 6px;
+      text-align: center;
+    }
+
+    .prop-list > * {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #fff;
+      padding: 3px;
+      &:nth-child(even) {
+        background-color: $head2color;
+      }
+    }
+
+
+    .prop-list {
+      >:last-child {
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+      }
+
+      .prop-name {
+        border-right: 1px solid #fff;
+        font-weight: bold;
+        width: 200px;
+      }
+    }
+  }
+}

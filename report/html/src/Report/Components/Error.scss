@@ -1,0 +1,16 @@
+@import "../color";
+
+.error-container {
+  background-color: $failedColor;
+  color: #fff;
+  display: flex;
+  min-height: 50px;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: 0 0 15px gray;
+  align-items: center;
+
+  button {
+    height: 22px;
+  }
+}
